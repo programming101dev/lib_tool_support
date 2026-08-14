@@ -1,0 +1,29 @@
+# lib_tool_support provides diagnostics and durable receipts to tools without
+# depending on lib_env or the instrumented wrapper stack. These direct host
+# calls are its reviewed foundational boundary; additions remain audit errors.
+src/diagnostic.c		c:@F@strcmp
+src/diagnostic.c		c:@F@fputc
+src/diagnostic.c		c:@F@fputs
+src/diagnostic.c		c:@F@fprintf
+src/lesson_catalog.c		c:@F@strcmp
+src/receipt.c		c:@F@close
+src/receipt.c		c:@F@strlen
+src/receipt.c		c:@F@strncmp
+src/receipt.c		c:@F@strcmp
+src/receipt.c		c:@F@memset
+src/receipt.c		c:@F@malloc
+src/receipt.c		c:@F@free
+src/receipt.c		c:@F@open
+src/receipt.c		c:@F@fstat
+src/receipt.c		c:@F@calloc
+src/receipt.c		c:@F@read
+src/receipt.c		c:@F@fputs
+src/receipt.c		c:@F@fprintf
+src/receipt_cli.c		c:@F@fprintf
+src/receipt_cli.c		c:@F@strcmp
+src/receipt_cli.c		c:@F@printf
+src/report.c		c:@F@memset
+src/report.c		c:@F@fputc
+src/report.c		c:@F@strcmp
+src/report.c		c:@F@fputs
+src/report.c		c:@F@fprintf
