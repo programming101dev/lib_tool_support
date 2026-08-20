@@ -73,7 +73,7 @@ int main(void)
     CHECK(strcmp(rule->id, "P101-WRAP-001") == 0);
     CHECK(strcmp(rule->lesson_id, "P101-LESSON-WRAPPER-BOUNDARIES") == 0);
     CHECK(strcmp(rule->lesson_path, "lessons/wrapper-boundaries.md") == 0);
-    CHECK(strcmp(rule->lesson_url, "https://github.com/programming101dev/playgrounds/blob/main/lessons/wrapper-boundaries.md") == 0);
+    CHECK(strcmp(rule->lesson_url, "https://github.com/programming101dev/playgrounds/blob/main/lessons/wrapper-boundaries.md#P101-WRAP-001") == 0);
 
     result = p101_tool_diagnostic_initialize_id(&diagnostic, "P101-WRAP-001", P101_TOOL_DIAGNOSTIC_ERROR, "src/main.c", 12U, 7U, "run", "raw call");
     CHECK(result == 0);
