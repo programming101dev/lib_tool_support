@@ -66,6 +66,7 @@ int main(void)
     unsigned int                            outputs;
     FILE                                   *stream;
     FILE                                   *json_stream;
+    int                                     result;
 
     rule = p101_tool_rule_definition_lookup(P101_TOOL_FINDING_WRAP_001);
     CHECK(rule != NULL);
@@ -73,6 +74,10 @@ int main(void)
     CHECK(strcmp(rule->lesson_id, "P101-LESSON-WRAPPER-BOUNDARIES") == 0);
     CHECK(strcmp(rule->lesson_path, "lessons/wrapper-boundaries.md") == 0);
     CHECK(strcmp(rule->lesson_url, "https://github.com/programming101dev/playgrounds/blob/main/lessons/wrapper-boundaries.md") == 0);
+
+    result = p101_tool_diagnostic_initialize_id(&diagnostic, "P101-WRAP-001", P101_TOOL_DIAGNOSTIC_ERROR, "src/main.c", 12U, 7U, "run", "raw call");
+    CHECK(result == 0);
+    CHECK(strcmp(diagnostic.lesson_id, "P101-LESSON-WRAPPER-BOUNDARIES") == 0);
     CHECK(p101_tool_rule_definition_lookup(P101_TOOL_FINDING_COUNT) == NULL);
     CHECK_ZERO(p101_tool_diagnostic_initialize(&diagnostic, P101_TOOL_FINDING_WRAP_001, P101_TOOL_DIAGNOSTIC_ERROR, "src/main.c", 12U, 7U, "run", "raw call\nneeds a wrapper"));
     CHECK_MINUS_ONE(p101_tool_diagnostic_initialize(&diagnostic, P101_TOOL_FINDING_WRAP_001, (p101_tool_diagnostic_severity)99, "src/main.c", 12U, 7U, "run", "message"));

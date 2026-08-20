@@ -59,6 +59,7 @@ extern "C"
 
     const char *p101_tool_diagnostic_severity_name(p101_tool_diagnostic_severity severity);
     int         p101_tool_diagnostic_initialize(struct p101_tool_diagnostic *diagnostic, p101_tool_finding finding, p101_tool_diagnostic_severity severity, const char *path, size_t line, size_t column, const char *function_name, const char *message);
+    int         p101_tool_diagnostic_initialize_id(struct p101_tool_diagnostic *diagnostic, const char *diagnostic_id, p101_tool_diagnostic_severity severity, const char *path, size_t line, size_t column, const char *function_name, const char *message);
     int         p101_tool_diagnostic_parse_outputs(const char *specification, unsigned int *outputs);
     int         p101_tool_diagnostic_write(FILE *stream, p101_tool_diagnostic_format format, const struct p101_tool_diagnostic *diagnostic);
     int         p101_tool_diagnostic_write_outputs(FILE *human_stream, FILE *json_stream, const struct p101_tool_diagnostic *diagnostic);

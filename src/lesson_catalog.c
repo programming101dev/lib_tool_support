@@ -44,7 +44,14 @@ const struct p101_tool_rule_definition *p101_tool_rule_definition_lookup(p101_to
         {"P101-MOD-021", "P101-LESSON-MODULE-BOUNDARIES", "lessons/module-boundaries.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/module-boundaries.md"},
         {"P101-MOD-022", "P101-LESSON-MODULE-BOUNDARIES", "lessons/module-boundaries.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/module-boundaries.md"},
         {"P101-MOD-027", "P101-LESSON-MODULE-BOUNDARIES", "lessons/module-boundaries.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/module-boundaries.md"},
+        {"P101-ALLOC-001", "P101-LESSON-GENERIC-RESOURCES", "lessons/generic-resources.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/generic-resources.md"},
+        {"P101-ALLOC-002", "P101-LESSON-GENERIC-RESOURCES", "lessons/generic-resources.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/generic-resources.md"},
+        {"P101-ALLOC-003", "P101-LESSON-GENERIC-RESOURCES", "lessons/generic-resources.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/generic-resources.md"},
         {"P101-ALLOC-004", "P101-LESSON-GENERIC-RESOURCES", "lessons/generic-resources.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/generic-resources.md"},
+        {"P101-FD-001", "P101-LESSON-GENERIC-RESOURCES", "lessons/generic-resources.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/generic-resources.md"},
+        {"P101-FD-002", "P101-LESSON-GENERIC-RESOURCES", "lessons/generic-resources.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/generic-resources.md"},
+        {"P101-FD-003", "P101-LESSON-GENERIC-RESOURCES", "lessons/generic-resources.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/generic-resources.md"},
+        {"P101-FD-004", "P101-LESSON-GENERIC-RESOURCES", "lessons/generic-resources.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/generic-resources.md"},
         {"P101-RESOURCE-000", "P101-LESSON-GENERIC-RESOURCES", "lessons/generic-resources.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/generic-resources.md"},
         {"P101-RESOURCE-001", "P101-LESSON-GENERIC-RESOURCES", "lessons/generic-resources.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/generic-resources.md"},
         {"P101-RESOURCE-002", "P101-LESSON-GENERIC-RESOURCES", "lessons/generic-resources.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/generic-resources.md"},
@@ -69,7 +76,10 @@ const struct p101_tool_rule_definition *p101_tool_rule_definition_lookup(p101_to
         {"P101-EXPECT-001", "P101-LESSON-POLICY-EXPECTATIONS", "lessons/policy-expectations.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/policy-expectations.md"},
         {"P101-POLICY-RESOURCE-001", "P101-LESSON-POLICY-EXPECTATIONS", "lessons/policy-expectations.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/policy-expectations.md"},
         {"P101-POLICY-RESOURCE-002", "P101-LESSON-POLICY-EXPECTATIONS", "lessons/policy-expectations.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/policy-expectations.md"},
-        {"P101-POLICY-RESOURCE-003", "P101-LESSON-POLICY-EXPECTATIONS", "lessons/policy-expectations.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/policy-expectations.md"}
+        {"P101-POLICY-RESOURCE-003", "P101-LESSON-POLICY-EXPECTATIONS", "lessons/policy-expectations.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/policy-expectations.md"},
+        {"P101-TEST-CONFORMANCE-001", "P101-LESSON-TEST-EVIDENCE", "lessons/test-evidence.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/test-evidence.md"},
+        {"P101-TEST-CONFORMANCE-002", "P101-LESSON-TEST-EVIDENCE", "lessons/test-evidence.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/test-evidence.md"},
+        {"P101-TEST-RECEIPT-001", "P101-LESSON-TEST-EVIDENCE", "lessons/test-evidence.md", "https://github.com/programming101dev/playgrounds/blob/main/lessons/test-evidence.md"}
     };
 
     // clang-format on

@@ -10,6 +10,7 @@ static int write_json_string(FILE *stream, const char *text);
 static int write_json(FILE *stream, const struct p101_tool_diagnostic *diagnostic);
 static int write_text(FILE *stream, const struct p101_tool_diagnostic *diagnostic);
 static int validate_rule_definition(const struct p101_tool_rule_definition *rule);
+static int initialize_from_rule(struct p101_tool_diagnostic *diagnostic, const struct p101_tool_rule_definition *rule, p101_tool_diagnostic_severity severity, const char *path, size_t line, size_t column, const char *function_name, const char *message);
 
 const char *p101_tool_diagnostic_severity_name(p101_tool_diagnostic_severity severity)
 {
@@ -56,12 +57,11 @@ static int validate_rule_definition(const struct p101_tool_rule_definition *rule
     return result;
 }
 
-int p101_tool_diagnostic_initialize(struct p101_tool_diagnostic *diagnostic, p101_tool_finding finding, p101_tool_diagnostic_severity severity, const char *path, size_t line, size_t column, const char *function_name, const char *message)
+static int initialize_from_rule(struct p101_tool_diagnostic *diagnostic, const struct p101_tool_rule_definition *rule, p101_tool_diagnostic_severity severity, const char *path, size_t line, size_t column, const char *function_name, const char *message)
 {
-    const struct p101_tool_rule_definition *rule;
-    const char                             *severity_name;
-    int                                     comparison;
-    int                                     result;
+    const char *severity_name;
+    int         comparison;
+    int         result;
 
     if(diagnostic == NULL || message == NULL)
     {
@@ -69,7 +69,6 @@ int p101_tool_diagnostic_initialize(struct p101_tool_diagnostic *diagnostic, p10
         result = -1;
         goto p101_single_exit_;
     }
-    rule   = p101_tool_rule_definition_lookup(finding);
     result = validate_rule_definition(rule);
     if(result != 0)
     {
@@ -97,6 +96,26 @@ int p101_tool_diagnostic_initialize(struct p101_tool_diagnostic *diagnostic, p10
     result                    = 0;
 
 p101_single_exit_:
+    return result;
+}
+
+int p101_tool_diagnostic_initialize(struct p101_tool_diagnostic *diagnostic, p101_tool_finding finding, p101_tool_diagnostic_severity severity, const char *path, size_t line, size_t column, const char *function_name, const char *message)
+{
+    const struct p101_tool_rule_definition *rule;
+    int                                     result;
+
+    rule   = p101_tool_rule_definition_lookup(finding);
+    result = initialize_from_rule(diagnostic, rule, severity, path, line, column, function_name, message);
+    return result;
+}
+
+int p101_tool_diagnostic_initialize_id(struct p101_tool_diagnostic *diagnostic, const char *diagnostic_id, p101_tool_diagnostic_severity severity, const char *path, size_t line, size_t column, const char *function_name, const char *message)
+{
+    const struct p101_tool_rule_definition *rule;
+    int                                     result;
+
+    rule   = p101_tool_rule_definition_lookup_id(diagnostic_id);
+    result = initialize_from_rule(diagnostic, rule, severity, path, line, column, function_name, message);
     return result;
 }
 
